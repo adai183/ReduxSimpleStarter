@@ -1,11 +1,14 @@
-import {FETCH_LOCATIONS} from '../actions/index';
+import {FETCH_LOCATIONS, FETCH_POST} from '../actions/index';
 
 const INITIAL_STATE ={all: [], post: null};
 
 export default function (state=INITIAL_STATE, action) {
   switch (action.type) {
-    case FETCH_LOCATIONS :
-      return {...sate, all: action.payload.data};
+    case FETCH_LOCATIONS:
+      return {...state, all: action.payload.data};
+
+    case FETCH_POST:
+      return {...state, post: action.payload.data};
 
     default:
       return state;
